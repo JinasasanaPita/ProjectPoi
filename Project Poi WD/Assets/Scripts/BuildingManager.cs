@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
+    Village village;
     public GameObject lumberCampPrefab;
     public GameObject farmPrefab;
+    public GameObject millPrefab;
     public GameObject miningCampPrefab;
 
     public string building;
@@ -20,27 +22,58 @@ public class BuildingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        village = GetComponent<Village>();
     }    
 
     public void CreateLumberCamp()
     {
-        isInBuildMode = true;
-        building = "Lumber Camp";
-        Instantiate(lumberCampPrefab);
+        if (village.wood >= 500)
+        {
+            isInBuildMode = true;
+            building = "Lumber Camp";
+            Instantiate(lumberCampPrefab);
+            village.gold -= 500;
+        }
+        else
+            Debug.Log("Lumber Camp: Not enough wood");
     }
 
     public void CreateFarm()
     {
-        isInBuildMode = true;
-        building = "Farm";
-        Instantiate (farmPrefab);
+        if (village.wood > 500)
+        {
+            isInBuildMode = true;
+            building = "Farm";
+            Instantiate(farmPrefab);
+            village.wood -= 500;
+        }
+        else
+            Debug.Log("Farm: Not enough wood");
+    }
+
+    public void CreateMill()
+    {
+        if (village.wood > 500)
+        {
+            isInBuildMode = true;
+            building = "Mill";
+            Instantiate(farmPrefab);
+            village.wood -= 500;
+        }
+        else
+            Debug.Log("Mill: Not enough wood");
     }
 
     public void CreateMiningCamp()
     {
-        isInBuildMode = true;
-        building = "Mining Camp";
-        Instantiate(miningCampPrefab);
+        if (village.wood > 500)
+        {
+            isInBuildMode = true;
+            building = "Mining Camp";
+            Instantiate(miningCampPrefab);
+            village.wood -= 500;
+        }
+        else
+            Debug.Log("Mining Camp: Not enough wood");
     }
 }

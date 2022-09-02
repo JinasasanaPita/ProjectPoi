@@ -8,6 +8,9 @@ TagManager:
   - Lumber camp
   - Tree
   - Game Manager
+  - Item
+  - Mill
+  - Door
   layers:
   - Default
   - TransparentFX

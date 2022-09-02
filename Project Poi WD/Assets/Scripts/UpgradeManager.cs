@@ -5,6 +5,11 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     Village village;
+    GameObject currentVillage;
+    public GameObject upgradedVillage;
+
+    Transform villageTransform;
+
 
     public int level_stockpilling;
     public int level_logFelling;
@@ -17,6 +22,9 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentVillage = GameObject.Find("Village (Level 1)");
+        villageTransform = currentVillage.transform;
+
         level_stockpilling = 0;
         level_logFelling = 0;
         level_bountifulharvest = 0;
@@ -140,5 +148,11 @@ public class UpgradeManager : MonoBehaviour
         }
         else
             Debug.Log("Not enough gold");
+    }
+
+    public void UpgradeVillage()
+    {
+        Destroy(currentVillage);
+        Instantiate(upgradedVillage, villageTransform.position, currentVillage.transform.rotation);
     }
 }
