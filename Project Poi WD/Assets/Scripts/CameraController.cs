@@ -10,13 +10,11 @@ public class CameraController : MonoBehaviour
 
     public float cameraHeight;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         cameraHeight = Camera.main.transform.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float translateX = Input.GetAxis("Horizontal");

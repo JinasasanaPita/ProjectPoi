@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4800648066379953321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4800648066379953320}
+  - component: {fileID: 4800648066379953316}
+  - component: {fileID: 4800648066379953319}
+  - component: {fileID: 4800648066379953323}
+  - component: {fileID: 4800648066379953317}
+  - component: {fileID: 4800648066379953322}
+  - component: {fileID: 4800648066379953318}
+  m_Layer: 0
+  m_Name: Game Manager (Village)
+  m_TagString: Game Manager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4800648066379953320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4800648066379953316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1f619cb91302a46a990ca3ae14b764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4800648066379953319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2c329d392161e4a982e2d71bba83eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4800648066379953323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f320dbc5cb44c4d4d83372f43b33188e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayGridGizmos: 0
+  onlyDisplayPathGizmos: 0
+  unwalkableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  worldGridSize: {x: 2000, y: 2000}
+  nodeRadius: 1
+--- !u!114 &4800648066379953317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7ef64fc8b9b0f4bb86d31f01cbbe2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: 100
+  wood: 100
+  gold: 100
+  villagerPrefab: {fileID: 1397507006164703778, guid: 9550e39a4afed5c47bb04811388f5570,
+    type: 3}
+  villagerSpawn: {fileID: 0}
+  villageStats: {fileID: 0}
+  villagerGatherRate: 1
+  villagerCarryCapacity: 1
+--- !u!114 &4800648066379953322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9df984f21a63f540993f334f7585c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lumberCampPrefab: {fileID: 1579615911222114343, guid: e137d8cc20e73ef4ba0b0d728988bd0a,
+    type: 3}
+  farmPrefab: {fileID: 8593742892865995343, guid: 095781cecac69f44e97ed046e89f47fb,
+    type: 3}
+  millPrefab: {fileID: 6450671113782623194, guid: 330c563c1a3758f4b8d9e74ba990877f,
+    type: 3}
+  miningCampPrefab: {fileID: 2888228621472966651, guid: 2fd93ed1c244816458efadcd48e527e1,
+    type: 3}
+  building: 
+  isInBuildMode: 0
+--- !u!114 &4800648066379953318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800648066379953321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b3a49469b860340b4ad05c510a4ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradedVillage: {fileID: 373916676928259198, guid: 3a88c84605ce03a4a87395549d8c5283,
+    type: 3}
+  level_stockpilling: 0
+  level_logFelling: 0
+  level_bountifulharvest: 0
+  level_cropRotation: 0
+  level_fertilisedPastures: 0
+  level_miningShaft: 0
+  level_wheelBarrow: 0

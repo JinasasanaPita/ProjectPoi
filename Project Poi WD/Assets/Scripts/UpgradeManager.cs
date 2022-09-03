@@ -152,7 +152,15 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeVillage()
     {
-        Destroy(currentVillage);
-        Instantiate(upgradedVillage, villageTransform.position, currentVillage.transform.rotation);
+        
+        if (village.gold > 1000000)
+        {
+            Destroy(currentVillage);
+            Instantiate(upgradedVillage, villageTransform.position, currentVillage.transform.rotation);
+        }
+        else
+        {
+            Debug.Log("Stop being poor rip");
+        }
     }
 }

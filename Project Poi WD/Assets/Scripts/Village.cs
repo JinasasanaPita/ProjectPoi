@@ -9,10 +9,15 @@ public class Village : MonoBehaviour
     public int food;
     public int wood;
     public int gold;
+    public int villager;
+
 
     public GameObject villagerPrefab;
     public Transform villagerSpawn;
-    public TextMeshProUGUI villageStats;
+    public TextMeshProUGUI foodDisplay;
+    public TextMeshProUGUI woodDisplay;
+    public TextMeshProUGUI goldDisplay;
+    public TextMeshProUGUI villageDisplay;
     private Vector3 v_villagerSpawn;
 
     public float villagerGatherRate;
@@ -26,14 +31,17 @@ public class Village : MonoBehaviour
         villagerCarryCapacity = 10;
         villagerGatherRate = 1;
 
-        villageStats.fontSize = 15;
-        v_villagerSpawn = villagerSpawn.position;
+/*        villageStats.fontSize = 15;
+*/        v_villagerSpawn = villagerSpawn.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        villageStats.text = "Gold: " + gold + "\nWood: " + wood + "\nFood: " + food;
+        foodDisplay.text = food.ToString();
+        woodDisplay.text = wood.ToString();
+        goldDisplay.text = gold.ToString();
+        villageDisplay.text = villager.ToString();
     }
 
     public void SpawnWoodCutter()

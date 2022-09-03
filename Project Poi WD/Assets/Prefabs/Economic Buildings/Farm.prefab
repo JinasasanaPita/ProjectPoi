@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1437787102659925651}
   m_Layer: 0
   m_Name: Farm
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmGameObject: {fileID: 8593742892865995343}
+  hasBeenBuilt: 0
 --- !u!1001 &127028354812519562
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class BuildingManager : MonoBehaviour
             isInBuildMode = true;
             building = "Lumber Camp";
             Instantiate(lumberCampPrefab);
-            village.gold -= 500;
+            village.wood -= 500;
         }
         else
             Debug.Log("Lumber Camp: Not enough wood");
@@ -57,7 +57,7 @@ public class BuildingManager : MonoBehaviour
         {
             isInBuildMode = true;
             building = "Mill";
-            Instantiate(farmPrefab);
+            Instantiate(millPrefab);
             village.wood -= 500;
         }
         else

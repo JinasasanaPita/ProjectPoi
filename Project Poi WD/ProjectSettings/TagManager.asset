@@ -11,11 +11,13 @@ TagManager:
   - Item
   - Mill
   - Door
+  - Farm
+  - Gold Mine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - Unwalkable
