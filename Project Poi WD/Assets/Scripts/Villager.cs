@@ -191,21 +191,62 @@ public class Villager : MonoBehaviour
 
     private void CheckIsAtResourcePoint(Collider collider)
     {
-        if (collider.gameObject.tag == "Woodline")
+        if (villagerType == "Wood Cutter")
         {
-            Debug.Log("Villager has reached the resource point");
-            isAtResourcePoint = true;
-            isAtCollectionPoint = false;
+            if (collider.gameObject.tag == "Woodline")
+            {
+                Debug.Log("Villager has reached the resource point");
+                isAtResourcePoint = true;
+                isAtCollectionPoint = false;
+            }
+            else if (collider.gameObject.tag == "Lumber camp")
+            {
+                isAtResourcePoint = false;
+                isAtCollectionPoint = true;
+            }
+            else
+            {
+                isAtResourcePoint = false;
+                isAtCollectionPoint = false;
+            }
         }
-        else if (collider.gameObject.tag == "Lumber camp")
+        else if (villagerType == "Farmer")
         {
-            isAtResourcePoint = false;
-            isAtCollectionPoint = true;
+            if (collider.gameObject.tag == "Farm")
+            {
+                Debug.Log("Villager has reached the resource point");
+                isAtResourcePoint = true;
+                isAtCollectionPoint = false;
+            }
+            else if (collider.gameObject.tag == "Mill")
+            {
+                isAtResourcePoint = false;
+                isAtCollectionPoint = true;
+            }
+            else
+            {
+                isAtResourcePoint = false;
+                isAtCollectionPoint = false;
+            }
         }
         else
         {
-            isAtResourcePoint = false;
-            isAtCollectionPoint = false;
+            if (collider.gameObject.tag == "Gold Mine")
+            {
+                Debug.Log("Villager has reached the resource point");
+                isAtResourcePoint = true;
+                isAtCollectionPoint = false;
+            }
+            else if (collider.gameObject.tag == "Mining Camp")
+            {
+                isAtResourcePoint = false;
+                isAtCollectionPoint = true;
+            }
+            else
+            {
+                isAtResourcePoint = false;
+                isAtCollectionPoint = false;
+            }
         }
     }
 

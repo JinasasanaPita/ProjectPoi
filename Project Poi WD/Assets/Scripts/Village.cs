@@ -17,7 +17,6 @@ public class Village : MonoBehaviour
     public TextMeshProUGUI foodDisplay;
     public TextMeshProUGUI woodDisplay;
     public TextMeshProUGUI goldDisplay;
-    public TextMeshProUGUI villageDisplay;
     private Vector3 v_villagerSpawn;
 
     public float villagerGatherRate;
@@ -41,7 +40,6 @@ public class Village : MonoBehaviour
         foodDisplay.text = food.ToString();
         woodDisplay.text = wood.ToString();
         goldDisplay.text = gold.ToString();
-        villageDisplay.text = villager.ToString();
     }
 
     public void SpawnWoodCutter()
