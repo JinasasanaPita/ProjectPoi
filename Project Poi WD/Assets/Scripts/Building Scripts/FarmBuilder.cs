@@ -12,7 +12,6 @@ public class FarmBuilder : MonoBehaviour
     RaycastHit hit;
     Vector3 movePoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("Game Manager");
@@ -32,8 +31,11 @@ public class FarmBuilder : MonoBehaviour
 
         if (buildingManager.isInBuildMode && buildingManager.building == "Farm" && Physics.Raycast(ray, out hit)
             && !hasBeenBuilt)
-            transform.position = hit.point;
-
+        {
+            movePoint = hit.point;
+            movePoint.y = 0.0f;
+            transform.position = movePoint;
+        }
         if (Input.GetMouseButton(0))
         {
             Destroy(gameObject);

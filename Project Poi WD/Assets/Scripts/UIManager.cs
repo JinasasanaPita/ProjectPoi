@@ -5,8 +5,6 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public GameObject upgradePanelGameObject;
     public GameObject createBuildingsPanelGameObject;
     public GameObject helpPanelGameObject;
@@ -16,6 +14,7 @@ public class UIManager : MonoBehaviour
     Animator createBuildingsAnimator;
     Animator helpPanelAnimator;
     Animator settingsPanelAnimator;
+
     bool upgradePanelIsShowing;
     bool createBuildingsPanelIsShowing;
     bool helpPanelIsShowing;

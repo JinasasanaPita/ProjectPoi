@@ -19,7 +19,6 @@ public class UpgradeManager : MonoBehaviour
     public int level_miningShaft;
     public int level_wheelBarrow;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentVillage = GameObject.Find("Village (Level 1)");
@@ -34,7 +33,6 @@ public class UpgradeManager : MonoBehaviour
         level_wheelBarrow = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         village = GetComponent<Village>();
@@ -160,7 +158,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Stop being poor rip");
+            Debug.Log("Aim for a million gold to upgrade village!");
         }
     }
 }

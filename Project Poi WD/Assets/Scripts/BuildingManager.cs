@@ -13,13 +13,11 @@ public class BuildingManager : MonoBehaviour
     public string building;
     public bool isInBuildMode;
 
-    // Start is called before the first frame update
     void Start()
     {
         isInBuildMode = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         village = GetComponent<Village>();
@@ -40,7 +38,7 @@ public class BuildingManager : MonoBehaviour
 
     public void CreateFarm()
     {
-        if (village.wood > 500)
+        if (village.wood >= 500)
         {
             isInBuildMode = true;
             building = "Farm";
@@ -53,7 +51,7 @@ public class BuildingManager : MonoBehaviour
 
     public void CreateMill()
     {
-        if (village.wood > 500)
+        if (village.wood >= 500)
         {
             isInBuildMode = true;
             building = "Mill";
@@ -66,7 +64,7 @@ public class BuildingManager : MonoBehaviour
 
     public void CreateMiningCamp()
     {
-        if (village.wood > 500)
+        if (village.wood >= 500)
         {
             isInBuildMode = true;
             building = "Mining Camp";

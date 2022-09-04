@@ -11,35 +11,33 @@ public class Village : MonoBehaviour
     public int gold;
     public int villager;
 
-
     public GameObject villagerPrefab;
     public Transform villagerSpawn;
     public TextMeshProUGUI foodDisplay;
     public TextMeshProUGUI woodDisplay;
     public TextMeshProUGUI goldDisplay;
+    public TextMeshProUGUI villagerDisplay;
     private Vector3 v_villagerSpawn;
 
     public float villagerGatherRate;
     public int villagerCarryCapacity;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         villagerCarryCapacity = 10;
         villagerGatherRate = 1;
 
-/*        villageStats.fontSize = 15;
-*/        v_villagerSpawn = villagerSpawn.position;
+        v_villagerSpawn = villagerSpawn.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         foodDisplay.text = food.ToString();
         woodDisplay.text = wood.ToString();
         goldDisplay.text = gold.ToString();
+
+        villager = GameObject.FindGameObjectsWithTag("Villager").Length;
+        villagerDisplay.text = villager.ToString();
     }
 
     public void SpawnWoodCutter()
@@ -55,6 +53,13 @@ public class Village : MonoBehaviour
         }
         else
             Debug.Log("Woodcutter: Appropriate buildings not found");
+    }
+
+    public void SpawnWoodCutterFromSave()
+    {
+        Villager villager = villagerPrefab.GetComponent<Villager>();
+        villager.villagerType = "Wood Cutter";
+        Instantiate(villagerPrefab, v_villagerSpawn, Quaternion.identity);
     }
 
     public void SpawnFarmer()
@@ -73,6 +78,13 @@ public class Village : MonoBehaviour
             Debug.Log("Farmer: Appropriate buildings not found");
     }
 
+    public void SpawnFarmerFromSave()
+    {
+        Villager villager = villagerPrefab.GetComponent<Villager>();
+        villager.villagerType = "Farmer";
+        Instantiate(villagerPrefab, v_villagerSpawn, Quaternion.identity);
+    }
+
     public void SpawnMiner()
     {
         GameObject[] resourceGameObjects = GameObject.FindGameObjectsWithTag("Gold Mine");
@@ -86,5 +98,12 @@ public class Village : MonoBehaviour
         }
         else
             Debug.Log("Miner: Appropriate buildings not found");
+    }
+
+    public void SpawnMinerFromSave()
+    {
+        Villager villager = villagerPrefab.GetComponent<Villager>();
+        villager.villagerType = "Miner";
+        Instantiate(villagerPrefab, v_villagerSpawn, Quaternion.identity);
     }
 }

@@ -14,10 +14,8 @@ public class SaveGameManager : MonoBehaviour
 
     private void Awake()
     {
-        
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         village = GetComponent<Village>();
@@ -25,10 +23,8 @@ public class SaveGameManager : MonoBehaviour
         LoadGame();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void LoadGame()
@@ -37,44 +33,52 @@ public class SaveGameManager : MonoBehaviour
         village.food = PlayerPrefs.GetInt("Food");
         village.gold = PlayerPrefs.GetInt("Gold");
 
+        if (village.wood == 0 && village.food == 0 && village.gold == 0)
+        {
+            village.wood = 500;
+            village.food = 500;
+            village.gold = 500;
+
+        }
+
         for (int i = 0; i < PlayerPrefs.GetInt("Wood Cutter"); i++)
         {
-            village.SpawnWoodCutter();
+            village.SpawnWoodCutterFromSave();
         }
         for (int i = 0; i < PlayerPrefs.GetInt("Farmer"); i++)
         {
-            village.SpawnFarmer();
+            village.SpawnFarmerFromSave();
         }
         for (int i = 0; i < PlayerPrefs.GetInt("Miner"); i++)
         {
-            village.SpawnMiner();
+            village.SpawnMinerFromSave();
         }
 
-        for (int i = 0; i <= PlayerPrefs.GetInt("n_lumberCamps"); i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("n_lumberCamps"); i++)
         {
 
             Instantiate(lumberCampPrefab, new Vector3(PlayerPrefs.GetFloat("lumberCamp" + i + ".x"), 
                 PlayerPrefs.GetFloat("lumberCamp" + i + ".y"), 
                 PlayerPrefs.GetFloat("lumberCamp" + i + ".z")), Quaternion.identity);
         }
-        for (int i = 0; i <= PlayerPrefs.GetInt("n_farms"); i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("n_farms"); i++)
         {
 
-            Instantiate(lumberCampPrefab, new Vector3(PlayerPrefs.GetFloat("farms" + i + ".x"),
+            Instantiate(farmPrefab, new Vector3(PlayerPrefs.GetFloat("farms" + i + ".x"),
                 PlayerPrefs.GetFloat("farms" + i + ".y"),
                 PlayerPrefs.GetFloat("farms" + i + ".z")), Quaternion.identity);
         }
-        for (int i = 0; i <= PlayerPrefs.GetInt("n_mills"); i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("n_mills"); i++)
         {
 
-            Instantiate(lumberCampPrefab, new Vector3(PlayerPrefs.GetFloat("mills" + i + ".x"),
+            Instantiate(millPrefab, new Vector3(PlayerPrefs.GetFloat("mills" + i + ".x"),
                 PlayerPrefs.GetFloat("mills" + i + ".y"),
                 PlayerPrefs.GetFloat("mills" + i + ".z")), Quaternion.identity);
         }
-        for (int i = 0; i <= PlayerPrefs.GetInt("n_miningCamps"); i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("n_miningCamps"); i++)
         {
 
-            Instantiate(lumberCampPrefab, new Vector3(PlayerPrefs.GetFloat("miningCamps" + i + ".x"),
+            Instantiate(miningCampPrefab, new Vector3(PlayerPrefs.GetFloat("miningCamps" + i + ".x"),
                 PlayerPrefs.GetFloat("miningCamps" + i + ".y"),
                 PlayerPrefs.GetFloat("miningCamps" + i + ".z")), Quaternion.identity);
         }

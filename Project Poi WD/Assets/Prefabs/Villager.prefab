@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1397507006164703779}
   m_Layer: 0
   m_Name: Villager
-  m_TagString: Untagged
+  m_TagString: Villager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,3 +116,4 @@ MonoBehaviour:
   villagerType: Wood Cutter
   gatherRate: 0
   villagerState: goingToResourceTile
+  currentDestination: {fileID: 0}

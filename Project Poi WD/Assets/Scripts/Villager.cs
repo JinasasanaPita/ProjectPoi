@@ -15,8 +15,8 @@ public class Villager : MonoBehaviour
     public float gatherRate;
     public string villagerState;
 
-    private Transform currentDestination;
-    float speed = 5;
+    public Transform currentDestination;
+    float speed = 2;
     Vector3[] path;
     int targetIndex;
 
@@ -26,7 +26,6 @@ public class Villager : MonoBehaviour
     bool isAtCollectionPoint;
     bool isAtResourcePoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("Game Manager");
@@ -74,13 +73,11 @@ public class Villager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         SetDestinations();
         SetVillagerStats();
-        f_carryCapacity = village.villagerCarryCapacity;
-        gatherRate = village.villagerGatherRate;
+
         if (villagerState == "goingToResourcePoint")
         {            
             if (currentDestination != resourcePoint)
@@ -119,21 +116,21 @@ public class Villager : MonoBehaviour
 
     private void SetVillagerStats()
     {
-        if (villagerType == "WoodCutter")
+        if (villagerType == "Wood Cutter")
         {
-            f_carryCapacity *= upgradeManager.CalculateStockpillingEffect(upgradeManager.level_stockpilling);
-            gatherRate *= upgradeManager.CalculateLogFellingEffect(upgradeManager.level_logFelling);
+            f_carryCapacity = 10 + upgradeManager.CalculateStockpillingEffect(upgradeManager.level_stockpilling);
+            gatherRate = 1 + upgradeManager.CalculateLogFellingEffect(upgradeManager.level_logFelling);
         }
         else if (villagerType == "Farmer")
         {
-            f_carryCapacity *= upgradeManager.CalculateBountifulHarvestEffect(upgradeManager.level_bountifulharvest);
-            gatherRate *= (upgradeManager.CalculateCropRotationEffect(upgradeManager.level_cropRotation) + 
-                upgradeManager.CalculateFertilisedPasturesEffect(upgradeManager.level_fertilisedPastures));
+            f_carryCapacity = 10 + upgradeManager.CalculateBountifulHarvestEffect(upgradeManager.level_bountifulharvest);
+            gatherRate = 1 + (upgradeManager.CalculateCropRotationEffect(upgradeManager.level_cropRotation)
+                + upgradeManager.CalculateFertilisedPasturesEffect(upgradeManager.level_fertilisedPastures));
         }
         else if (villagerType == "Miner")
         {
-            f_carryCapacity *= upgradeManager.CalculateMiningShaftEffect(upgradeManager.level_miningShaft);
-            gatherRate *= upgradeManager.CalculateWheelbarrowEffect(upgradeManager.level_wheelBarrow);
+            f_carryCapacity = 10 + upgradeManager.CalculateMiningShaftEffect(upgradeManager.level_miningShaft);
+            gatherRate = 1 + upgradeManager.CalculateWheelbarrowEffect(upgradeManager.level_wheelBarrow);
         }
     }
 

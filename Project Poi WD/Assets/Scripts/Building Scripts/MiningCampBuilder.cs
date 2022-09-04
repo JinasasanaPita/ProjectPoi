@@ -12,7 +12,6 @@ public class MiningCampBuilder : MonoBehaviour
     RaycastHit hit;
     Vector3 movePoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("Game Manager");
@@ -26,7 +25,6 @@ public class MiningCampBuilder : MonoBehaviour
             transform.position = hit.point;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
